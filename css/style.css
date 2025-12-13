@@ -1,0 +1,161 @@
+*{
+     scroll-behavior: smooth;
+  background-color: #333446;
+  font-family:'popins';
+     color: #EAEFEF;
+}
+.header{
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 30px;
+   
+}
+nav ul li a{
+   display: flex;
+   justify-content: space-between;
+  text-decoration: none;
+  font-size: 19px;
+  transition: 0.3s;
+}
+.header nav ul li a:hover{
+    color: #7886C7;
+   
+}
+.links{
+    margin-right: 10%;
+}
+.links ul li {
+    
+    display: inline-block;
+    padding-left: 10px;
+    list-style: none;
+    font-size:large;
+}
+/*
+  section{
+    min-height: 100vh;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+    */
+.home {
+    text-align: center;
+    margin-top: 12%;
+    min-height: 100vh;
+}
+.about{
+    min-height: 100vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 20px 20px;
+}
+.image.fa-user-tie-hair-long {
+  font-size: 40px;
+  color: #6C5B7B;
+}
+
+.home h1{
+    font-size: 65px;
+    
+}
+.home h1 strong{
+    color:#7886C7;
+}
+.home h2{
+   color: rgba(0, 0, 1, 0.5);
+   font-size: 33px;
+}
+.home p{
+    margin-bottom: 10px;
+    line-height: 160%;
+    font-size: 19px;
+}
+.about .section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  
+}
+.about .image{
+    border-radius: 10%;
+    background-color: #EAEFEF;
+}
+.about-i h1{
+margin-left: 16%;
+margin-bottom: 10%;
+font-size: 36px;
+ 
+}
+.about-me{
+    font-size: 29x;
+    line-height: 115%;
+}
+.project-text h1{
+  margin-left: 16%;
+margin-bottom: 10%;
+font-size: 36px;
+}
+.services .project-grid{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  repeat(auto-fit,min-max(200px,1fr));
+    row-gap: 20%;
+    column-gap: 30%;
+}
+.grid-project1{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 8%;
+    padding-top: 8%;
+}
+.grid-project1{
+   border:4px solid #210F37;
+    border-radius: 19px;
+}
+.git-folder{
+    display: flex;
+    justify-content: space-between;
+}
+.contact{
+      margin-top: 12%;
+    min-height: 100vh;
+}
+.contact-text{
+    margin-left: 16%;
+margin-bottom: 10%;
+font-size: 25px; 
+}
+.text-place{
+    display: block;
+    margin:0 auto;
+    padding: 30px 30px 30px;
+    width: 40%;
+}
+.send button{
+    display: block;
+    margin: 0 auto;
+    margin-top:5%;
+    padding: 12px 20px ;
+    border-radius: 11px;
+    transition: 0.5s ease-in-out;
+}
+.send button:hover{
+    color: black;
+    background-color: white;
+    transform: scale(1.2);
+}
+/* Style for active menu link */
+nav ul li a.active {
+  color: #ff6600;
+  font-weight: bold;
+}
