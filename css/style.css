@@ -87,6 +87,9 @@ nav ul li a{
   
 }
 .about .image{
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
     border-radius: 10%;
     background-color: #EAEFEF;
     overflow: hidden;

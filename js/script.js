@@ -17,3 +17,10 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Handle contact form safely
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const message = document.getElementById('contactMessage').value;
+  window.location.href = `mailto:samrisamrawit30@gmail.com?subject=Contact from Portfolio&body=${encodeURIComponent(message)}`;
+});
