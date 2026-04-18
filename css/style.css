@@ -260,3 +260,13 @@ nav ul li a.active {
   color: #ff6600;
   font-weight: bold;
 }
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    border-top: 1px solid rgba(234, 239, 239, 0.1);
+}
