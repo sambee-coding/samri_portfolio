@@ -57,9 +57,11 @@ nav ul li a{
     margin-right: 15%;
     padding: 20px 20px;
 }
-.image.fa-user-tie-hair-long {
-  font-size: 40px;
-  color: #6C5B7B;
+.about .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .home h1{
@@ -87,6 +89,11 @@ nav ul li a{
 .about .image{
     border-radius: 10%;
     background-color: #EAEFEF;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .about-i h1{
 margin-left: 16%;
@@ -104,23 +111,26 @@ margin-bottom: 10%;
 font-size: 36px;
 }
 .services .project-grid{
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows:  repeat(auto-fit,min-max(200px,1fr));
-    row-gap: 20%;
-    column-gap: 30%;
+    grid-template-rows:  repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 40px;
+    column-gap: 5%;
 }
 .grid-project1{
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 8%;
-    padding-top: 8%;
-}
-.grid-project1{
-   border:4px solid #210F37;
+    padding: 8% 5%;
+    background-color: #43445A;
+    border: 2px solid #6C5B7B;
     border-radius: 19px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.grid-project1:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 24px rgba(0,0,0,0.5);
+    border-color: #7886C7;
 }
 .git-folder{
     display: flex;
@@ -138,8 +148,13 @@ font-size: 25px;
 .text-place{
     display: block;
     margin:0 auto;
-    padding: 30px 30px 30px;
+    padding: 30px;
     width: 40%;
+    background-color: #EAEFEF;
+    color: #333446;
+    border-radius: 11px;
+    font-size: 16px;
+    resize: vertical;
 }
 .send button{
     display: block;
