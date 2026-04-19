@@ -1,3 +1,43 @@
+/* ─── Theme Toggle ─────────────────────────────────────────── */
+(function () {
+  const html = document.documentElement;
+  const STORAGE_KEY = 'samri-theme';
+
+  // Resolve initial theme: saved preference → OS preference → dark
+  function getInitialTheme() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return saved;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    const icon = document.querySelector('#theme-toggle .toggle-icon');
+    if (icon) icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    localStorage.setItem(STORAGE_KEY, theme);
+  }
+
+  // Apply immediately (before paint) to avoid flash
+  applyTheme(getInitialTheme());
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    // Sync icon on DOM ready
+    const current = html.getAttribute('data-theme') || 'dark';
+    const icon = btn.querySelector('.toggle-icon');
+    if (icon) icon.textContent = current === 'dark' ? '🌙' : '☀️';
+
+    btn.addEventListener('click', function () {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  });
+})();
+
+/* ─── Scroll-spy active nav link ───────────────────────────── */
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
 

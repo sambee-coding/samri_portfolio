@@ -1,8 +1,41 @@
-*{
+/* ─── Theme tokens ─────────────────────────────────────────── */
+:root {
+  --bg:          #333446;
+  --bg-card:     #333446;
+  --text:        #EAEFEF;
+  --text-sub:    rgba(234,239,239,0.7);
+  --accent:      #7886C7;
+  --accent2:     #6C5B7B;
+  --input-bg:    #EAEFEF;
+  --input-color: #333446;
+  --btn-bg:      #EAEFEF;
+  --border-foot: rgba(234,239,239,0.1);
+  --scrollbar-track: #333446;
+}
+
+[data-theme="light"] {
+  --bg:          #F4F6FB;
+  --bg-card:     #FFFFFF;
+  --text:        #1e1e2e;
+  --text-sub:    rgba(30,30,46,0.65);
+  --accent:      #5567c0;
+  --accent2:     #8a6fa8;
+  --input-bg:    #FFFFFF;
+  --input-color: #1e1e2e;
+  --btn-bg:      #1e1e2e;
+  --border-foot: rgba(30,30,46,0.12);
+  --scrollbar-track: #dde2f0;
+}
+
+/* ─── Base reset ────────────────────────────────────────────── */
+* {
   scroll-behavior: smooth;
-  background-color: #333446;
-  font-family:'popins';
-  color: #EAEFEF;
+  font-family: 'Poppins', 'popins', sans-serif;
+  color: var(--text);
+}
+html, body {
+  background-color: var(--bg);
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 .header{
     position: relative;
@@ -23,9 +56,8 @@ nav ul li a{
   font-size: 19px;
   transition: 0.3s;
 }
-.header nav ul li a:hover{
-    color: #7886C7;
-   
+.header nav ul li a:hover {
+    color: var(--accent);
 }
 .links{
     margin-right: 10%;
@@ -68,11 +100,11 @@ nav ul li a{
     font-size: 65px;
     
 }
-.home h1 strong{
-    color:#7886C7;
+.home h1 strong {
+    color: var(--accent);
 }
-.home h2{
-   color: rgba(0, 0, 1, 0.5);
+.home h2 {
+   color: var(--text-sub);
    font-size: 33px;
 }
 .home p{
@@ -86,12 +118,12 @@ nav ul li a{
     gap: 30px;
   
 }
-.about .image{
+.about .image {
     max-width: 350px;
     width: 100%;
     margin: 0 auto;
     border-radius: 10%;
-    background-color: #EAEFEF;
+    background-color: var(--input-bg);
     overflow: hidden;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -127,21 +159,21 @@ font-size: 36px;
     height: 10px;
 }
 .preview-slider::-webkit-scrollbar-thumb {
-    background: #6C5B7B;
+    background: var(--accent2);
     border-radius: 10px;
 }
 .preview-slider::-webkit-scrollbar-track {
-    background: #333446;
+    background: var(--scrollbar-track);
 }
 .preview-item {
     position: relative;
     min-width: 320px;
     height: 220px;
-    background: #333446;
+    background: var(--bg-card);
     border-radius: 19px;
     overflow: hidden;
     scroll-snap-align: center;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, background 0.35s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 .preview-img {
@@ -203,15 +235,16 @@ font-size: 36px;
     row-gap: 40px;
     column-gap: 5%;
 }
-.grid-project1{
+.grid-project1 {
     padding: 8% 5%;
-    border: 2px solid #6C5B7B;
+    border: 2px solid var(--accent2);
     border-radius: 19px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    background-color: var(--bg-card);
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.35s ease;
 }
 .grid-project1:hover {
     transform: translateY(-8px);
-    border-color: #7886C7;
+    border-color: var(--accent);
 }
 .git-folder{
     display: flex;
@@ -226,38 +259,40 @@ font-size: 36px;
 margin-bottom: 10%;
 font-size: 25px; 
 }
-.text-place{
+.text-place {
     display: block;
-    margin:0 auto;
+    margin: 0 auto;
     padding: 30px;
     width: 40%;
-    background-color: #EAEFEF;
-    color: #333446;
+    background-color: var(--input-bg);
+    color: var(--input-color);
     border-radius: 11px;
     font-size: 16px;
     resize: vertical;
+    border: 1px solid var(--accent2);
+    transition: background-color 0.35s ease, color 0.35s ease;
 }
-.send button{
+.send button {
     display: block;
     margin: 0 auto;
-    margin-top:5%;
+    margin-top: 5%;
     padding: 12px 20px;
     border-radius: 11px;
-    color: black;
-    background-color: #EAEFEF;
+    color: var(--bg);
+    background-color: var(--btn-bg);
     border: none;
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
-.send button:hover{
-    color: black;
-    background-color: white;
-    transform: scale(1.2);
+.send button:hover {
+    background-color: var(--accent);
+    color: #fff;
+    transform: scale(1.05);
 }
 /* Style for active menu link */
 nav ul li a.active {
-  color: #ff6600;
+  color: var(--accent);
   font-weight: bold;
 }
 
@@ -268,5 +303,45 @@ nav ul li a.active {
     font-size: 16px;
     letter-spacing: 1px;
     opacity: 0.7;
-    border-top: 1px solid rgba(234, 239, 239, 0.1);
+    border-top: 1px solid var(--border-foot);
+    background-color: transparent;
+}
+
+/* ─── Theme Toggle Button ───────────────────────────────────── */
+#theme-toggle {
+    background: transparent;
+    border: 2px solid var(--accent2);
+    border-radius: 50px;
+    cursor: pointer;
+    width: 48px;
+    height: 28px;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    transition: border-color 0.3s ease;
+    flex-shrink: 0;
+}
+#theme-toggle:hover {
+    border-color: var(--accent);
+}
+#theme-toggle .toggle-icon {
+    position: absolute;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+    color: #fff;
+}
+[data-theme="light"] #theme-toggle .toggle-icon {
+    transform: translateX(20px);
+    background: var(--accent);
 }
