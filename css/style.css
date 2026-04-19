@@ -345,3 +345,135 @@ nav ul li a.active {
     transform: translateX(20px);
     background: var(--accent);
 }
+
+/* ─── Hamburger button (hidden on desktop) ──────────────────── */
+#menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    flex-shrink: 0;
+}
+#menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#menu-toggle.open span:nth-child(2) { opacity: 0; }
+#menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Tablet (≤ 1024px) ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .home h1  { font-size: 50px; }
+    .home h2  { font-size: 26px; }
+    .home p   { font-size: 17px; padding: 0 5%; }
+
+    .about { margin-left: 6%; margin-right: 6%; }
+    .about-i h1 { margin-left: 0; }
+
+    .preview-section { padding: 60px 6%; }
+
+    .project-text h1 { margin-left: 6%; }
+    .services .project-grid { margin-left: 6%; margin-right: 6%; }
+
+    .contact-text { margin-left: 6%; }
+    .text-place   { width: 60%; }
+}
+
+/* ─── Mobile (≤ 768px) ──────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ── Header layout ── */
+    .header {
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 12px 20px;
+        gap: 0;
+        position: relative;
+    }
+
+    /* Hamburger visible on mobile */
+    #menu-toggle { display: flex; }
+
+    /* Nav collapses off-screen; opens on .nav-open */
+    .header nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        order: 3;
+    }
+    .header.nav-open nav { max-height: 300px; }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 0 14px;
+        margin: 0;
+    }
+    nav ul li { margin-left: 0; }
+    nav ul li a { font-size: 16px; padding: 4px 0; }
+
+    /* Push toggle + hamburger to the right */
+    #theme-toggle  { margin-left: auto; margin-right: 10px; }
+    #menu-toggle   { margin-left: 0; }
+
+    /* Social links: smaller, no right margin */
+    .links { margin-right: 0; order: 2; width: 100%; padding: 4px 0 0; }
+    .links ul { padding: 0; margin: 0; }
+    .links ul li { padding-left: 0; padding-right: 12px; }
+
+    /* ── Home ── */
+    .home { margin-top: 28%; padding: 0 20px; }
+    .home h1 { font-size: 34px; }
+    .home h2 { font-size: 19px; }
+    .home p  { font-size: 15px; line-height: 150%; }
+
+    /* ── About ── */
+    .about { margin-left: 5%; margin-right: 5%; padding: 20px 10px; }
+    .about-i h1 { margin-left: 0; font-size: 28px; margin-bottom: 6%; }
+    .about .section2 { grid-template-columns: 1fr; }
+    .about .image { max-width: 260px; }
+
+    /* ── Project Preview ── */
+    .preview-section { padding: 40px 5%; }
+    .preview-text h1 { font-size: 28px; margin-bottom: 20px; }
+    .preview-item    { min-width: 260px; height: 190px; }
+    .preview-content h3 { font-size: 18px; }
+    .preview-content p  { font-size: 12px; }
+
+    /* ── Projects grid: single column ── */
+    .project-text h1 { margin-left: 5%; font-size: 28px; margin-bottom: 6%; }
+    .services .project-grid {
+        grid-template-columns: 1fr;
+        margin-left: 5%;
+        margin-right: 5%;
+        row-gap: 24px;
+    }
+    .grid-project1 { padding: 6% 5%; }
+
+    /* ── Contact ── */
+    .contact { margin-top: 20%; }
+    .contact-text { margin-left: 5%; font-size: 20px; margin-bottom: 6%; }
+    .text-place   { width: 84%; padding: 20px; font-size: 15px; }
+    .send button  { margin-top: 8%; }
+
+    /* ── Footer ── */
+    .footer { font-size: 14px; padding: 20px; }
+}
+
+/* ─── Very small phones (≤ 420px) ──────────────────────────── */
+@media (max-width: 420px) {
+    .home h1 { font-size: 28px; }
+    .home h2 { font-size: 16px; }
+    .preview-item { min-width: 220px; height: 160px; }
+    .text-place { width: 92%; }
+}

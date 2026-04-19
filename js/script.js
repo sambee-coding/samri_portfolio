@@ -37,6 +37,27 @@
   }
 })();
 
+/* ─── Hamburger menu toggle ─────────────────────────────────── */
+const menuToggle = document.getElementById('menu-toggle');
+const header     = document.querySelector('.header');
+
+if (menuToggle && header) {
+  menuToggle.addEventListener('click', function () {
+    const isOpen = header.classList.toggle('nav-open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when any nav link is clicked
+  document.querySelectorAll('nav ul li a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      header.classList.remove('nav-open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 /* ─── Scroll-spy active nav link ───────────────────────────── */
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
