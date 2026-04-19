@@ -18,14 +18,14 @@
     localStorage.setItem(STORAGE_KEY, theme);
   }
 
-  // Apply immediately (before paint) to avoid flash
+  // Apply saved / OS theme immediately
   applyTheme(getInitialTheme());
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-
-    // Sync icon on DOM ready
+  // Script is at the bottom of <body> so DOM is already ready —
+  // no need to wait for DOMContentLoaded (it already fired).
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    // Sync icon to current theme
     const current = html.getAttribute('data-theme') || 'dark';
     const icon = btn.querySelector('.toggle-icon');
     if (icon) icon.textContent = current === 'dark' ? '🌙' : '☀️';
@@ -34,7 +34,7 @@
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       applyTheme(next);
     });
-  });
+  }
 })();
 
 /* ─── Scroll-spy active nav link ───────────────────────────── */
