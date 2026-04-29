@@ -250,6 +250,49 @@ font-size: 36px;
     display: flex;
     justify-content: space-between;
 }
+/* ─── Achievements ──────────────────────────────────────────── */
+.achivements {
+    padding: 60px 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.achivements h1 {
+    width: 100%;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.achiv {
+    background: var(--bg-card);
+    border: 2px solid var(--accent2);
+    border-radius: 19px;
+    padding: 20px;
+    width: calc(50% - 15px); /* Two columns layout */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.achiv:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+.achiv img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 11px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.achiv p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 .contact{
       margin-top: 12%;
     min-height: 100vh;
@@ -385,6 +428,8 @@ nav ul li a.active {
 
     .contact-text { margin-left: 6%; }
     .text-place   { width: 60%; }
+
+    .achivements { padding: 60px 6%; }
 }
 
 /* ─── Mobile (≤ 768px) ──────────────────────────────────────── */
@@ -468,6 +513,11 @@ nav ul li a.active {
 
     /* ── Footer ── */
     .footer { font-size: 14px; padding: 20px; }
+
+    /* ── Achievements ── */
+    .achivements { padding: 40px 5%; }
+    .achivements h1 { font-size: 28px; margin-bottom: 20px; }
+    .achiv { width: 100%; }
 }
 
 /* ─── Very small phones (≤ 420px) ──────────────────────────── */
