@@ -11,6 +11,12 @@ function App() {
         Hello, Sambee 🐝
       </h1>
     </div>
+
+    <div className="min-h-screen bg-cream flex flex-col items-center justify-center gap-4">
+  <h1 className="font-display text-4xl font-semibold text-espresso">Fraunces display</h1>
+  <p className="font-body text-ink-soft">Inter body text</p>
+  <span className="font-mono text-xs uppercase tracking-widest text-comb-amber">Space Mono label</span>
+</div>
     </>
   )
 }
