@@ -3,296 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samri-portfolio</title>
+    <meta name="description" content="Samri's FullStack Developer Portfolio - Showcasing modern web applications and design.">
+    <title>Samri - FullStack Developer Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <header class="header">
-<!-- Navigation Menu -->
-<nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-<button id="theme-toggle" aria-label="Toggle light / dark mode" title="Toggle theme">
-  <span class="toggle-icon">🌙</span>
-</button>
-<button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
-<div class="links">
-    <ul>
-<li><a href="https://github.com/sambee-coding"><i class="fa-brands fa-github"></i></a></li>
-<li><a href="https://www.linkedin.com/in/samrawit-bitew-4896b7364/"><i class="fa-brands fa-linkedin"></i></a></li>
-<li><a href="https://github.com/sambee-coding"><i class="fa-solid fa-envelope"></i></a></li>
-</ul>
-</div>
-   </header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project-preview">Previews</a></li>
+                <li><a href="#services">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-controls">
+            <button id="theme-toggle" aria-label="Toggle light / dark mode" title="Toggle theme">
+                <span class="toggle-icon">🌙</span>
+            </button>
+            <div class="links">
+                <ul>
+                    <li><a href="https://github.com/sambee-coding" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/samrawit-bitew-4896b7364/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="mailto:samrisamrawit30@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
    
-<!-- Page Sections -->
-<section id="home" class="home">
-  <h1>hi , <strong> Samri </strong>here .</h1>
-  <h2> i create meaningful projects .</h2>
-  <p>I’m a FullStack developer passionate about building digital experiences that matter.<br>
-     Combining clean code with thoughtful design, I create websites that are not just functional, <br> but purposeful and memorable.</p>
-</section>
+    <!-- Hero Section -->
+    <section id="home" class="home">
+        <div class="home-content reveal">
+            <h1>Hi, I'm <strong class="accent-text"><span class="typewriter-wrapper"><span class="typewriter-text"></span></span></strong></h1>
+            <h2>I create meaningful projects.</h2>
+            <p>I’m a FullStack developer passionate about building digital experiences that matter.<br>
+            Combining clean code with thoughtful design, I create websites that are not just functional, <br> but purposeful and memorable.</p>
+        </div>
+    </section>
 
-<section id="about" class="about">
-    <div class="about-i">
-      <h1>/About me</h1>
-</div>
-    <div class="section2">
-        <div class="about-me">
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h1 class="section-header reveal">/About <span class="accent-text">me</span></h1>
+        
+        <div class="about-grid">
+            <div class="about-text glass-panel reveal" style="padding: 40px;">
+                <p>I’m a FullStack Developer who blends clean code with creative design to build meaningful digital experiences. I craft responsive interfaces and emotionally-driven animations that tell purposeful stories. Currently I am studying Computer Science at Bahir Dar University.</p>
+                
+                <h3>Here are some of my Skills://</h3>
+                <ul class="skills-list">
+                    <li><i class="fa-solid fa-code"></i> HTML & CSS</li>
+                    <li><i class="fa-brands fa-js"></i> JavaScript (ES6+)</li>
+                    <li><i class="fa-brands fa-react"></i> React.js</li>
+                    <li><i class="fa-brands fa-figma"></i> Figma</li>
+                    <li><i class="fa-solid fa-wind"></i> Tailwind CSS</li>
+                    <li><i class="fa-brands fa-bootstrap"></i> Bootstrap</li>
+                    <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+                    <li><i class="fa-solid fa-server"></i> Express.js</li>
+                    <li><i class="fa-brands fa-github"></i> Git/GitHub</li>
+                </ul>
+            </div>
+            
+            <div class="about-image-wrapper reveal">
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Samri Profile">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <p>I’m a FullStack Developer who blends clean code with creative design  to build meaningful digital experiences.
-     I craft responsive interfaces and emotionally-driven animations that tell purposeful stories.  Currently i am studying Computer Science at Bahir Dar Unversity.</p>
+    <!-- Project Preview Slider -->
+    <section id="project-preview" class="preview-section">
+        <h1 class="section-header reveal">/Project <span class="accent-text">Previews</span></h1>
+        
+        <div class="preview-slider reveal">
+            <div class="preview-item">
+                <video src="videos/Smart-Hire-AI.mp4" class="preview-img" autoplay loop muted playsinline></video>
+                <div class="preview-content">
+                    <h3>SmartHire AI</h3>
+                    <p>Modern placement platform</p>
+                </div>
+            </div>
+            <div class="preview-item">
+                <video src="videos/Moodify.mp4" class="preview-img" autoplay loop muted playsinline></video>
+                <div class="preview-content">
+                    <h3>Moodify</h3>
+                    <p>Music recommendation app</p>
+                </div>
+            </div>
+            <div class="preview-item">
+                <video src="videos/study-session-manager.mp4" class="preview-img" autoplay loop muted playsinline></video>
+                <div class="preview-content">
+                    <h3>Study Session Manager</h3>
+                    <p>AI-powered study planning</p>
+                </div>
+            </div>
+            <div class="preview-item">
+                <video src="videos/weather-web-app.mp4" class="preview-img" autoplay loop muted playsinline></video>
+                <div class="preview-content">
+                    <h3>Weather App</h3>
+                    <p>Real-time forecasts</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <h3>Here are some of my Skills://</h3>
-     <ul>
-  <li><i class="fa-solid fa-circle-small"></i> HTML & CSS</li>
-  <li><i class="fa-solid fa-circle-small"></i> JavaScript (ES6+)</li>
-  <li><i class="fa-solid fa-circle-small"></i> React.js</li>
-  <li><i class="fa-solid fa-circle-small"></i>Figma</li>
-  <li><i class="fa-solid fa-circle-small"></i> Tailwind CSS</li>
-    <li><i class="fa-solid fa-circle-small"></i> Bootstrap</li>
-      <li><i class="fa-solid fa-circle-small"></i> Node.js</li>
-        <li><i class="fa-solid fa-circle-small"></i> Express.js</li>
-  <li><i class="fa-solid fa-circle-small"></i> Git/GitHub (Version Control System)</li>
-</ul>
+    <!-- Projects Grid Section -->
+    <section id="services" class="services">
+        <h1 class="section-header reveal">/Featured <span class="accent-text">Projects</span></h1>
+        
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="grid-project1 glass-panel reveal">
+                <div class="git-folder">
+                    <a href="https://github.com/sambee-coding" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://sambee-weather.netlify.app/" aria-label="Live Demo"><i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+                <div class="explanation">
+                    <p>Weather Web APP</p>
+                    <p>A responsive weather application allowing users to view real-time conditions globally. It features a clean UI integrating dynamic DOM manipulation and external API data fetching for fast updates.</p>
+                    <ul class="tech-stack">
+                        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="grid-project1 glass-panel reveal">
+                <div class="git-folder">
+                    <a href="https://github.com/sambee-coding/addis-amet-gift" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://addis-amet-gift-2018.netlify.app/" aria-label="Live Demo"><i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+                <div class="explanation">
+                    <p>New Year Gift</p>
+                    <p>A festive interactive New Year web app that generates personalized greetings with a typewriter animation and floating particles.</p>
+                    <ul class="tech-stack">
+                        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
 
-     </div>
-  <div class="image">
-    <img src="images/profile.jpg" alt="Samri Profile">
-  </div>
-  </div>
-</section>
+            <!-- Project 3 -->
+            <div class="grid-project1 glass-panel reveal">
+                <div class="git-folder">
+                    <a href="https://github.com/sambee-coding/study-session-manager" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://study-session-manager.netlify.app/" aria-label="Live Demo"><i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+                <div class="explanation">
+                    <p>Study Session Manager</p>
+                    <p>A productivity web app combining AI-powered study planning with a Pomodoro timer to help users stay focused and manage learning time efficiently.</p>
+                    <ul class="tech-stack">
+                        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
 
-<section id="project-preview" class="preview-section">
-  <div class="preview-text">
-    <h1>/Project Preview</h1>
-  </div>
-  <div class="preview-slider">
-    <div class="preview-item">
-      <video src="videos/Smart-Hire-AI.mp4" class="preview-img" autoplay loop muted playsinline></video>
-      <div class="preview-content">
-        <h3>SmartHire AI</h3>
-        <p>Modern placement platform</p>
-      </div>
-    </div>
-    <div class="preview-item item-2">
-      <video src="videos/Moodify.mp4" class="preview-img" autoplay loop muted playsinline></video>
-      <div class="preview-content">
-        <h3>Moodify</h3>
-        <p>Music recommendation app</p>
-      </div>
-    </div>
-    <div class="preview-item item-3">
-      <video src="videos/study-session-manager.mp4" class="preview-img" autoplay loop muted playsinline></video>
-      <div class="preview-content">
-        <h3>Smart Study Session Manager</h3>
-        <p>AI-powered study planning and Pomodoro timer</p>
-      </div>
-    </div>
-    <div class="preview-item item-4">
-      <video src="videos/weather-web-app.mp4" class="preview-img" autoplay loop muted playsinline></video>
-      <div class="preview-content">
-        <h3>Weather App</h3>
-        <p>Real-time forecasts</p>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- Project 4 -->
+            <div class="grid-project1 glass-panel reveal">
+                <div class="git-folder">
+                    <a href="https://github.com/SimretAbebe/SmartHire-Ai" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://smart-hire-ai-eight.vercel.app" aria-label="Live Demo"><i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+                <div class="explanation">
+                    <p>Smart-Hire-AI</p>
+                    <p>A modern web platform connecting employers with trusted home helpers. Top 10 finish in our first hackathon! Features clean glassmorphism UI and bilingual support.</p>
+                    <ul class="tech-stack">
+                        <li>React</li><li>Tailwind</li><li>Django</li><li>Python</li>
+                    </ul>
+                </div>
+            </div>
 
-<section id="services" class="services">
-    <div class="project-text">
-  <h1>/Projects</h1>
-  </div>
-  <div class="project-grid">
-    <div class="grid-project1">
-<div class="git-folder">
-    <div><a href=""><i class="fa-brands fa-github"></i></a></div>
-   <div><a href="https://sambee-weather.netlify.app/"><i class="fa-solid fa-square-up-right"></i></a></div>
- 
-    </div>
-<div class="explanation">
-    <p>Weather Web APP</p>
-    <P>
-      A responsive weather web application that allows users to search and view real-time weather conditions for any city around the world. The app displays key weather details such as temperature, humidity, wind speed, and general conditions using a clean and user-friendly interface.
+            <!-- Project 5 -->
+            <div class="grid-project1 glass-panel reveal">
+                <div class="git-folder">
+                    <a href="https://github.com/sambee-coding/Moodify" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://moodify-nu-ten.vercel.app/" aria-label="Live Demo"><i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+                <div class="explanation">
+                    <p>Moodify</p>
+                    <p>An AI-powered music recommendation web app that helps users discover songs based on their current mood. Analyzes emotional state input to curate personalized playlists.</p>
+                    <ul class="tech-stack">
+                        <li>React</li><li>Node.js</li><li>Express.js</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="grid-project1 glass-panel reveal">
+                <div class="git-folder">
+                    <a href="https://github.com/sambee-coding/poem-generator-sambee" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://poem-generator-sambee.netlify.app/" aria-label="Live Demo"><i class="fa-solid fa-square-up-right"></i></a>
+                </div>
+                <div class="explanation">
+                    <p>Poem Generator</p>
+                    <p>An interactive web app that generates creative poems based on input words using AI. Features smooth typewriter effects and asynchronous requests.</p>
+                    <ul class="tech-stack">
+                        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-Built with HTML, CSS, and JavaScript, and powered by a weather API, this project demonstrates API integration, dynamic DOM manipulation, and responsive UI design. It focuses on delivering fast and accurate weather updates with a simple and intuitive user experience.
-    </P>
-    <li><i class="fa-solid fa-circle-small"></i> HTML & CSS</li>
-  <li><i class="fa-solid fa-circle-small"></i> JavaScript (ES6+)</li>
-</div>
-    </div>
-     <div class="grid-project1">
-      <div class="git-folder">
-    <div><a href="https://github.com/sambee-coding/addis-amet-gift"><i class="fa-brands fa-github"></i></a></div>
-    <div><a href="https://addis-amet-gift-2018.netlify.app/"><i class="fa-solid fa-square-up-right"></i></a></div>
- 
-    </div>
-    <div class="explanation">
-    <p>New year gift</p>
-    <P>
-       A festive interactive New Year web app that generates personalized greetings with typewriter animation, floating particles, and responsive design using HTML, CSS, and JavaScript.<br>
-    </P>
-     <li><i class="fa-solid fa-circle-small"></i> HTML & CSS</li>
-  <li><i class="fa-solid fa-circle-small"></i> JavaScript (ES6+)</li>
-</div>
-    </div>
-     <div class="grid-project1">
-      <div class="git-folder">
-    <div><a href=""><i class="fa-brands fa-github"></i></a></div>
-    <div><a href="https://world-clock-sambeei.netlify.app/"><i class="fa-solid fa-square-up-right"></i></a></div>
+    <!-- Achievements -->
+    <section class="achivements">
+        <h1 class="section-header reveal">/Achievements</h1>
+        <div class="achievements-grid">
+            <div class="achiv glass-panel reveal">
+                <img src="images/Bit hackathon  certificate .jpg" alt="BiT Hackathon Certificate">
+                <p>Achieved Top 10 in the BiT Hackathon building the SmartHire AI project.</p>
+            </div>
+            <div class="achiv glass-panel reveal">
+                <img src="images/shecodes certification.png" alt="SheCodes Certificate">
+                <p>Completed the SheCodes web development certification, mastering HTML, CSS, JavaScript, and React.</p>
+            </div>
+        </div>
+    </section>
 
-    </div>
-     <div class="explanation">
-    <p>World Clock</p>
-    <P>
-       i have made a world clock web app that can give information when someone wants to know their local time and another country time too 
-    </P>
-     <li><i class="fa-solid fa-circle-small"></i> HTML & CSS</li>
-  <li><i class="fa-solid fa-circle-small"></i> JavaScript (ES6+)</li>
-</div>
-    </div>
-     <div class="grid-project1">
-       <div class="git-folder">
-    <div><a href=""><i class="fa-brands fa-github"></i></a></div>
-    <div><a href="https://poem-generator-sambee.netlify.app/"><i class="fa-solid fa-square-up-right"></i></a></div>
- 
-    </div>
-     <div class="explanation">
-    <p>poem generator</p>
-    <P>
-       An interactive web app that generates creative poems based on a user’s input word using the SheCodes AI API. It features a smooth typewriter effect, a loading indicator, and a clean responsive UI for a better user experience.
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h1 class="section-header reveal">/Contact <span class="accent-text">Me</span></h1>
+        
+        <form id="contactForm" class="contact-form reveal">
+            <textarea id="contactMessage" placeholder="Enter your message here..." class="text-place" rows="6" required></textarea>
+            <button type="submit" class="send-btn">Send Message</button>
+        </form>
+    </section>
 
-Built with HTML, CSS, and JavaScript, it demonstrates API integration, asynchronous requests, and dynamic UI updates. <br>
-    </P>
-     <li><i class="fa-solid fa-circle-small"></i> HTML & CSS</li>
-  <li><i class="fa-solid fa-circle-small"></i> JavaScript (ES6+)</li>
-</div>
-    </div>
-     <div class="grid-project1">
-       <div class="git-folder">
-    <div><a href="https://github.com/sambee-coding/study-session-manager"><i class="fa-brands fa-github"></i></a></div>
-    <div><a href="https://study-session-manager.netlify.app/"><i class="fa-solid fa-square-up-right"></i></a></div>
-    </div>
-     <div class="explanation">
-    <p>Study session manager</p>
-    <P>
-     Study Session Manager is a productivity web app that combines AI-powered study planning with a Pomodoro timer to help users stay focused and manage their learning time effectively.
+    <footer class="footer">
+        <p>Built and Designed By Samri</p>
+    </footer>
 
-Users can enter their subject, goal, and study duration, and the AI generates structured, actionable suggestions for improving focus, time management, and productivity. The app also includes a fully functional Pomodoro timer with focus/break cycles and alarm notifications.
- <br>
-    </P>
-     <li><i class="fa-solid fa-circle-small"></i> HTML & CSS</li>
-  <li><i class="fa-solid fa-circle-small"></i> JavaScript (ES6+)</li>
-</div>
-    </div>
-     <div class="grid-project1">
-       <div class="git-folder">
-    <div><a href="https://github.com/SimretAbebe/SmartHire-Ai"><i class="fa-brands fa-github"></i></a></div>
-    <div><a href="https://smart-hire-ai-eight.vercel.app"><i class="fa-solid fa-square-up-right"></i></a></div>
-    </div>
-     <div class="explanation">
-    <p>Smart-Hire-AI</p>
-    <P>
-      SmartHire AI is a modern web platform that connects employers with trusted home helpers like maids and agents in a fast and easy way. It helps users register, find matches based on skills and location, and generate simple work contracts. The platform is designed with a clean glassmorphism UI, mobile-friendly layout, and supports both English and Amharic languages for better accessibility. me and my teammates built this platform for our first ever hackathon and we made it happen to the top 10! <br>
-    </P>
-    <li><i class="fa-solid fa-circle-small"></i> REACT</li>
-      <li><i class="fa-solid fa-circle-small"></i> TAILWIND</li>
-        <li><i class="fa-solid fa-circle-small"></i> DJANGO and PYTHON</li>
-</div>
-    </div>
-     <div class="grid-project1" style="display: none;">
-       <div class="git-folder">
-    <div><a href="https://github.com/sambee-coding/creator-Path"><i class="fa-brands fa-github"></i></a></div>
-    <div><a href=""><i class="fa-solid fa-square-up-right"></i></a></div>
-    </div>
-     <div class="explanation">
-    <p>CreatorPath</p>
-    <P>
-      CreatorPath is an AI-powered web application that helps aspiring content creators build a personalized roadmap for growing their online presence. Users enter their niche, content style, tools, budget, and on-camera preference, and the system generates a structured step-by-step guide with practical content strategies, including hooks, script ideas, filming directions, and posting tips.
-
-The platform transforms confusion into clarity by combining AI-generated guidance with a visual roadmap interface, making content creation more structured, accessible, and actionable for beginners and growing creators. <br>
-    </P>
-     <li><i class="fa-solid fa-circle-small"></i> React</li>
-  <li><i class="fa-solid fa-circle-small"></i> Node.js</li>
-   <li><i class="fa-solid fa-circle-small"></i> Express.js</li>
-
-</div>
-    </div>
-     <div class="grid-project1" style="display: none;">
-       <div class="git-folder">
-    <div><a href="https://github.com/sambee-coding/Half-Life-Interactive-Platform"><i class="fa-brands fa-github"></i></a></div>
-    <div><a href=""><i class="fa-solid fa-square-up-right"></i></a></div>
-    </div>
-     <div class="explanation">
-    <p>Half-Life-Interactive-Platform</p>
-    <P>
-A futuristic interactive web platform inspired by Half-Life, featuring immersive UI elements like a Time Capsule where users can submit messages in a sci-fi styled environment. It blends storytelling, design, and interactivity into a sleek, responsive experience.    </P>
-  <li><i class="fa-solid fa-circle-small"></i>REACT</li>
-  <li><i class="fa-solid fa-circle-small"></i>Bootstrap</li>
- 
-
-</div>
-    </div>
-  
-   <div class="grid-project1" >
-       <div class="git-folder">
-    <div><a href="https://github.com/sambee-coding/Moodify"><i class="fa-brands fa-github"></i></a></div>
-    <div><a href="https://moodify-nu-ten.vercel.app/"><i class="fa-solid fa-square-up-right"></i></a></div>
-    </div>
-     <div class="explanation">
-    <p>Moodify</p>
-    <P>Moodify is an AI-powered music recommendation web app that helps users discover songs based on their current mood. Users simply select or describe how they feel, and the system analyzes their input to suggest personalized playlists that match their emotional state. It enhances music discovery by blending emotion-based input with smart recommendation algorithms, making listening more immersive, personal, and engaging for every moment of the day, whether you want to relax, focus, or feel energized.</P>
-       <li><i class="fa-solid fa-circle-small"></i>REACT</li>
-  <li><i class="fa-solid fa-circle-small"></i>Node.js</li>
-    <li><i class="fa-solid fa-circle-small"></i>Express.js</li>
-</div>
-    </div>
-  
-  </div>
-</section>
-<section class="achivements">
-  
-    <h1>/Achivements</h1>
-    <div class="achiv">
-      <img src="images/Bit hackathon  certificate .jpg" alt="BiT Hackathon Certificate">
-    <p>Achieved Top 10 in the BiT Hackathon building the SmartHire AI project.</p>
-  </div>
-       <div class="achiv">
-        <img src="images/shecodes certification.png" alt="SheCodes Certificate">
-      <p>Completed the SheCodes web development certification, mastering HTML, CSS, JavaScript, and React.</p>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-     <div class="contact-text">
-  <h1>/Contact me</h1>
-  </div>
-
-  <form id="contactForm">
-    <div class="mail-sender">
-      <textarea id="contactMessage" placeholder="enter your text here" class="text-place" rows="6" required></textarea>
-    </div>
-    <div class="send">
-      <button type="submit">send</button>
-    </div>
-  </form>
-</section>
-
-<footer class="footer">
-  <p>Built and Designed By Samri</p>
-</footer>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

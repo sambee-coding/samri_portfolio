@@ -3,7 +3,6 @@
   const html = document.documentElement;
   const STORAGE_KEY = 'samri-theme';
 
-  // Resolve initial theme: saved preference → OS preference → dark
   function getInitialTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return saved;
@@ -18,14 +17,10 @@
     localStorage.setItem(STORAGE_KEY, theme);
   }
 
-  // Apply saved / OS theme immediately
   applyTheme(getInitialTheme());
 
-  // Script is at the bottom of <body> so DOM is already ready —
-  // no need to wait for DOMContentLoaded (it already fired).
   const btn = document.getElementById('theme-toggle');
   if (btn) {
-    // Sync icon to current theme
     const current = html.getAttribute('data-theme') || 'dark';
     const icon = btn.querySelector('.toggle-icon');
     if (icon) icon.textContent = current === 'dark' ? '🌙' : '☀️';
@@ -37,28 +32,31 @@
   }
 })();
 
-/* ─── Hamburger menu toggle ─────────────────────────────────── */
-const menuToggle = document.getElementById('menu-toggle');
-const header     = document.querySelector('.header');
+/* ─── Header Scroll Effect ──────────────────────────────────── */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
+/* ─── Hamburger Menu ────────────────────────────────────────── */
+const menuToggle = document.getElementById('menu-toggle');
 if (menuToggle && header) {
-  menuToggle.addEventListener('click', function () {
-    const isOpen = header.classList.toggle('nav-open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
+  menuToggle.addEventListener('click', () => {
+    header.classList.toggle('nav-open');
   });
 
-  // Close menu when any nav link is clicked
-  document.querySelectorAll('nav ul li a').forEach(function (link) {
-    link.addEventListener('click', function () {
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
       header.classList.remove('nav-open');
-      menuToggle.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
-/* ─── Scroll-spy active nav link ───────────────────────────── */
+/* ─── Scroll Spy (Active Links) ─────────────────────────────── */
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
 
@@ -66,7 +64,7 @@ window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 60) {
+    if (pageYOffset >= sectionTop - 100) {
       current = section.getAttribute('id');
     }
   });
@@ -79,9 +77,66 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Handle contact form safely
-document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const message = document.getElementById('contactMessage').value;
-  window.location.href = `mailto:samrisamrawit30@gmail.com?subject=Contact from Portfolio&body=${encodeURIComponent(message)}`;
+/* ─── Typewriter Effect ─────────────────────────────────────── */
+const typewriterElement = document.querySelector('.typewriter-text');
+if (typewriterElement) {
+  const words = ['Samri', 'a Developer', 'a Creator', 'an Innovator'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+      typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 150;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      typeSpeed = 2000; // Pause at end of word
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      typeSpeed = 500; // Pause before typing new word
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  // Start the effect
+  setTimeout(type, 1000);
+}
+
+/* ─── Reveal Animations on Scroll ───────────────────────────── */
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      // observer.unobserve(entry.target); // Uncomment if you only want it to animate once
+    }
+  });
+}, {
+  rootMargin: '0px',
+  threshold: 0.15
 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+/* ─── Contact Form ──────────────────────────────────────────── */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const message = document.getElementById('contactMessage').value;
+    window.location.href = `mailto:samrisamrawit30@gmail.com?subject=Contact from Portfolio&body=${encodeURIComponent(message)}`;
+  });
+}
